@@ -5,13 +5,26 @@
  */
 package com.rentamaquina.maquinaria.app.repositories;
 
+
 import com.rentamaquina.maquinaria.app.entities.Message;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.rentamaquina.maquinaria.app.repositories.crud.MessageCrudRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author fdomoreno
  */
-public interface MessageRepository extends JpaRepository<Message,Integer> {
+@Repository
+public class MessageRepository {
+    @Autowired
+    private MessageCrudRepository messageCrudRepository;
+    
+    //Consultar
+    public List<Message> getAll(){
+        return (List<Message>) messageCrudRepository.findAll();
+    }
+    
     
 }

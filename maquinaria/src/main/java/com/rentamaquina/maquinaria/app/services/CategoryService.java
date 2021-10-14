@@ -7,8 +7,11 @@ package com.rentamaquina.maquinaria.app.services;
 
 import org.springframework.stereotype.Service;
 
-
+/**
+ *
+ * @author LENOVO
+ */
 @Service
-public class ClientService {
+public class CategoryService {
     
 }

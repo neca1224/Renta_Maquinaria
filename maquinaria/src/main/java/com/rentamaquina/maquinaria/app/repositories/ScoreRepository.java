@@ -5,25 +5,24 @@
  */
 package com.rentamaquina.maquinaria.app.repositories;
 
-
-import com.rentamaquina.maquinaria.app.entities.Machine;
-import com.rentamaquina.maquinaria.app.repositories.crud.MachineCrudRepository;
+import com.rentamaquina.maquinaria.app.entities.Score;
+import com.rentamaquina.maquinaria.app.repositories.crud.ScoreCrudRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author fdomoreno
+ * @author LENOVO
  */
 @Repository
-public class MachineRepository {
+public class ScoreRepository {
     @Autowired
-    private MachineCrudRepository machineCrudRepository;
+    private ScoreCrudRepository scoreCrudRepository;
     
     //Consultar
-    public List<Machine> getAll(){
-        return (List<Machine>) machineCrudRepository.findAll();
+    public List<Score> getAll(){
+        return (List<Score>) scoreCrudRepository.findAll();
     }
     
 }

@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author fdomoreno
+ * @author LENOVO
  */
 @RestController
-@RequestMapping("Client")
-public class ClientController {
+@RequestMapping("Category")
+public class CategoryController {
     
 }
