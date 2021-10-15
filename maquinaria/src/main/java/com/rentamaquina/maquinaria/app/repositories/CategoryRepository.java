@@ -8,6 +8,7 @@ package com.rentamaquina.maquinaria.app.repositories;
 import com.rentamaquina.maquinaria.app.entities.Category;
 import com.rentamaquina.maquinaria.app.repositories.crud.CategoryCrudRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,12 +18,41 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class CategoryRepository {
-    @Autowired
+   @Autowired
     private CategoryCrudRepository categoryCrudRepository;
     
-    //Consultar
+    /**
+     * Select
+     * @return 
+     */
     public List<Category> getAll(){
         return (List<Category>) categoryCrudRepository.findAll();
+    }
+    
+    /**
+     * Insert
+     * @param category
+     * @return 
+     */
+    public Category save(Category category){
+        return categoryCrudRepository.save(category);
+    }
+    
+    /**
+     * Buscar registro
+     * @param categoryId
+     * @return 
+     */
+    public Optional<Category> getCategory(int categoryId){
+        return categoryCrudRepository.findById(categoryId);
+    }
+    
+    /**
+     * Delete
+     * @param category 
+     */
+    public void delete(Category category){
+        categoryCrudRepository.delete(category);
     }
     
 }
