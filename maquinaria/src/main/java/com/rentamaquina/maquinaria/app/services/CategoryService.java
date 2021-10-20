@@ -40,7 +40,7 @@ public class CategoryService {
     
     /**
      * POST
-     * @param client
+     * @param category
      * @return 
      */
     public Category save(Category category){
