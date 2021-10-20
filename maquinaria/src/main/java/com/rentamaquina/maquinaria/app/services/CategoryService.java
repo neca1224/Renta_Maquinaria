@@ -44,10 +44,10 @@ public class CategoryService {
      * @return 
      */
     public Category save(Category category){
-        if(category.getIdCategory()==null){
+        if(category.getId()==null){
             return repository.save(category);
         }else{
-            Optional<Category> resultado = repository.getCategory(category.getIdCategory());
+            Optional<Category> resultado = repository.getCategory(category.getId());
             if(resultado.isPresent()){
                 return category;
             }else{
@@ -62,17 +62,14 @@ public class CategoryService {
      * @return 
      */
     public Category update(Category category){
-        if(category.getIdCategory()!= null){
-            Optional<Category> resultado = repository.getCategory(category.getIdCategory());
+        if(category.getId()!= null){
+            Optional<Category> resultado = repository.getCategory(category.getId());
             if(resultado.isPresent()){
-                if(category.getName()!=null){
+                if (category.getName() != null) {
                     resultado.get().setName(category.getName());
                 }
-                if(category.getEmail()!=null){
-                    resultado.get().setEmail(category.getEmail());
-                }
-                if(category.getPassword()!=null){
-                    resultado.get().setPassword(category.getPassword());
+                if (category.getDescription() != null) {
+                    resultado.get().setDescription(category.getDescription());
                 }
                 repository.save(resultado.get());
                 return resultado.get();
