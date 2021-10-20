@@ -65,7 +65,7 @@ public class ClientService {
                 if(client.getName()!=null){
                     resultado.get().setName(client.getName());
                 }
-                if(client.getAge()!=0){
+                if(client.getAge()!=null){
                     resultado.get().setAge(client.getAge());
                 }
                 if(client.getEmail()!=null){

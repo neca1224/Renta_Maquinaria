@@ -33,7 +33,7 @@ public class Client implements Serializable {
     private Integer idClient;
     @Column(length=50)
     private String name;
-    private int age;
+    private Integer age;
     private String email;
     private String password;
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
