@@ -6,6 +6,8 @@
 package com.rentamaquina.maquinaria.app.controllers;
 
 import com.rentamaquina.maquinaria.app.entities.Reservation;
+import com.rentamaquina.maquinaria.app.repositories.CountClients;
+import com.rentamaquina.maquinaria.app.repositories.ReservationStatus;
 import com.rentamaquina.maquinaria.app.services.ReservationService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,5 +72,20 @@ public class ReservationController {
     public boolean delete(@PathVariable("id") int reservationId) {
         return service.deleteReservation(reservationId);
     }
+    
+    @GetMapping("/report-status")
+    public ReservationStatus getReservas(){
+        return service.reporteStatusServicio();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+     public List<Reservation> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ){
+         return service.reporteTiempoServicio(dateOne, dateTwo);
+     }
+     
+     @GetMapping("/report-clients")
+     public List<CountClients> getClientes(){
+         return service.reporteClientesServicio();
+     }
     
 }
